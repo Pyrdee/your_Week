@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_reg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registration">
@@ -12,6 +13,7 @@
         android:layout_height="203dp"
         android:layout_marginTop="92dp"
         android:layout_marginBottom="13dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@+id/tvHello"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,9 +26,9 @@
         android:id="@+id/btSave"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginBottom="177dp"
+        android:layout_marginBottom="150dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Tallenna"
+        android:text="@string/tallenna"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,11 +39,11 @@
     <TextView
         android:id="@+id/tvHello"
         android:layout_width="wrap_content"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="Kerro ensin nimesi ja ikäsi:"
+        android:text="@string/tv_hello"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -66,24 +68,27 @@
             android:id="@+id/ptName"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Nimi:"
+            android:hint="@string/pt_nimi"
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/ptAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Ikä:"
+            android:hint="@string/pt_age"
             android:inputType="number" />
 
         <EditText
             android:id="@+id/ptEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Email:"
+            android:hint="@string/pt_email"
             android:inputType="textEmailAddress" />
     </LinearLayout>
 

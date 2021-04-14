@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Your Week</string>
+    <string name="tallenna">Tallenna</string>
+    <string name="tv_hello">Kerro nimesi, ikäsi ja vanhemman sähköpostiosoite:</string>
+    <string name="pt_email">Email:</string>
+    <string name="pt_age">Ikä:</string>
+    <string name="pt_nimi">Nimi:</string>
+    <string name="todo">layout</string>
 </resources>
