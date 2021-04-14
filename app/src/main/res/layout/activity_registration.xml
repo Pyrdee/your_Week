@@ -7,21 +7,23 @@
     tools:context=".Registration">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/ivLogo"
         android:layout_width="182dp"
-        android:layout_height="0dp"
+        android:layout_height="203dp"
         android:layout_marginTop="92dp"
         android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/tvHello"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/hienouusilogo" />
 
     <Button
-        android:id="@+id/btStart2"
+        android:id="@+id/btSave"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginBottom="177dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Tallenna"
@@ -30,42 +32,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContinue"
         app:rippleColor="#FF5722" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvHello"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:text="Kerro ensin nimesi ja ikäsi:"
+        android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ikä:"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHello">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nimi:"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="322dp" />
+        <EditText
+            android:id="@+id/ptName"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:hint="Nimi:"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ptAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ikä:"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/ptEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email:"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
