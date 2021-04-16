@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F8F7F5">
+
+    <TextView
+        android:id="@+id/NAME"
+        android:layout_width="196dp"
+        android:layout_height="62dp"
+        android:layout_above="@+id/AGE"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="20sp" />
+
+    <TextView
+        android:id="@+id/AGE"
+        android:layout_width="196dp"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="539dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="20sp" />
+
+    <TextView
+        android:id="@+id/EMAIL"
+        android:layout_width="196dp"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="472dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="20sp" />
+</RelativeLayout>
