@@ -17,7 +17,7 @@ public class NewTask extends AppCompatActivity {
         setContentView(R.layout.new_task);
     }
     public void createNewTask (View view) {
-        Intent taskCreate = new Intent(this, TODO);
+        Intent taskCreate = new Intent(this, Calendar_View.class);
         EditText editname = (EditText) findViewById(R.id.ptTaskName);
         String name = editname.getText().toString();
         EditText editdate = (EditText) findViewById(R.id.ptTaskDate);
