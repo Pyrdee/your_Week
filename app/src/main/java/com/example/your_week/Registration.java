@@ -8,7 +8,6 @@ import android.view.View;
 
 public class Registration extends AppCompatActivity {
 
-    //public static final String "EXTRA MESSAGE" = "com.example.your_Week.NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +15,5 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
     }
     public void sendInfo(View view){
-       // Intent person = new Intent(this, )
     }
 }
