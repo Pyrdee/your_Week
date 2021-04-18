@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class TIEDOT extends AppCompatActivity {
@@ -20,9 +18,9 @@ public class TIEDOT extends AppCompatActivity {
     String text1 = intent.getStringExtra(Intent.EXTRA_TEXT);
     String text2 = intent.getStringExtra(Intent.EXTRA_TEXT);
 
-    TextView textView = (TextView) findViewById(R.id.NAME);
-    TextView tView = (TextView) findViewById(R.id.AGE);
-    TextView teView = (TextView) findViewById(R.id.EMAIL);
+    TextView textView = (TextView) findViewById(R.id.ptUserName);
+    TextView tView = (TextView) findViewById(R.id.ptUserAge);
+    TextView teView = (TextView) findViewById(R.id.ptUserEmail);
 
     textView.setText(text);
     tView.setText(text1);
