@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Your_Week">
         <activity android:name=".Registration"></activity>
+        <activity android:name=".TIEDOT"></activity>
         <activity android:name=".MainActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
