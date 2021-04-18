@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Your_Week" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/yellow_1</item>
+        <item name="colorPrimary">@color/yellow_0</item>
         <item name="colorPrimaryVariant">@color/yellow_1</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -14,5 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="colorButtonNormal">@color/yellow_2</item>
         <item name="colorControlHighlight">@color/yellow_2</item>
+        <item name="imageButtonStyle">@color/white</item>
+        <item name="android:textViewStyle">@color/black</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+
     </style>
 </resources>
