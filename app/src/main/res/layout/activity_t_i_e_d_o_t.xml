@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/UserInfo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#F8F7F5">
@@ -22,7 +23,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp"
-        android:text="Nimi:" />
+        android:text="Nimi:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvUserAge"
@@ -31,7 +33,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="208dp"
-        android:text="Ikä:" />
+        android:text="Ikä:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvUserEmail"
@@ -40,33 +43,33 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="298dp"
-        android:text="Sähköpostiosoite:" />
+        android:text="Sähköpostiosoite:"
+        android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/ptUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="143dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
+    <TextView
         android:id="@+id/ptUserAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="236dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="235dp"
+        android:textAlignment="center" />
 
-    <EditText
+    <TextView
         android:id="@+id/ptUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_width="258dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="329dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/ptUserName"
+        android:layout_width="244dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp"
+        android:textAlignment="center" />
 </RelativeLayout>
