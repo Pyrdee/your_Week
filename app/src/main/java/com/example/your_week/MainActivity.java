@@ -3,11 +3,16 @@ package com.example.your_week;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+       // public void moveToRegistration (View view);
 
-    }
-    public void moveToRegistration(View view){
-        Intent move = new Intent(this, Registration.class);
-        startActivity(move);
-
+        if (sharedPreferences != null) {
+            Intent move = new Intent(this, Registration.class);
+            startActivity(move);
+        } else {
+            Intent move = new Intent(this, List_Of_Activities.class);
+            startActivity(move);
+        }
     }
 }
