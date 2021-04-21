@@ -20,21 +20,21 @@ public class MainActivity extends AppCompatActivity {
 
         calendar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, List_Of_Activities.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(MainActivity.this, List_Of_Activities.class);
+                startActivity(intent1);
             }
         });
 
         newTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NewTask.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, NewTask.class);
+                startActivity(intent2);
             }
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TIEDOT.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, TIEDOT.class);
+                startActivity(intent2);
             }
         });
 

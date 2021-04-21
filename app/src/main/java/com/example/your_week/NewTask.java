@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -43,6 +44,29 @@ public class NewTask extends AppCompatActivity {
                 } else {
                     Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        ImageView calendar = findViewById(R.id.bt_calendar);
+        ImageView newTask = findViewById(R.id.bt_newTask);
+        ImageView myProfile = findViewById(R.id.bt_myProfile);
+
+        calendar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent1 = new Intent(NewTask.this, List_Of_Activities.class);
+                startActivity(intent1);
+            }
+        });
+
+        newTask.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent2 = new Intent(NewTask.this, NewTask.class);
+                startActivity(intent2);
+            }
+        });
+        myProfile.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent2 = new Intent(NewTask.this, TIEDOT.class);
+                startActivity(intent2);
             }
         });
     }
