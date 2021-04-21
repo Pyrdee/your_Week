@@ -21,7 +21,7 @@ public class NewTask extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_of_activities);
+        setContentView(R.layout.new_task);
 
         editText = (EditText) findViewById(R.id.ptTaskName);
         btSave = (Button) findViewById(R.id.btSave);
@@ -29,7 +29,7 @@ public class NewTask extends AppCompatActivity {
         btView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (NewTask.this, List_Of_Activities.class);
+                Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +38,7 @@ public class NewTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newEntry = editText.getText().toString();
-                if(editText.length() != 0) {
+                if (editText.length() != 0) {
                     AddData(newEntry);
                     editText.setText("");
                 } else {
@@ -75,9 +75,9 @@ public class NewTask extends AppCompatActivity {
     public void AddData(String newEntry) {
         boolean insertData = tehtavat.addData(newEntry);
 
-        if(insertData==true) {
+        if (insertData == true) {
             Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
-        } else  {
+        } else {
             Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
 
         }
