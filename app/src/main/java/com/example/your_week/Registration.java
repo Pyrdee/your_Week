@@ -43,13 +43,16 @@ public class Registration extends AppCompatActivity {
         String user_email = editText2.getText().toString();
 
         if(TextUtils.isEmpty(user_name)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+            editText.setError("Ei nimeä");
+            Toast.makeText(Registration.this,"Lisää vielä nimi", Toast.LENGTH_SHORT).show();
         }
         if(TextUtils.isEmpty(user_age)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+            editText.setError("Ei ikää");
+            Toast.makeText(Registration.this,"Lisää vielä ikä", Toast.LENGTH_SHORT).show();
         }
         if(TextUtils.isEmpty(user_email)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+            editText.setError("Ei sähköpostia");
+            Toast.makeText(Registration.this,"Lisää vielä sähköpostiosoite", Toast.LENGTH_SHORT).show();
         }
 
         Intent intent = new Intent(this, TIEDOT.class);
