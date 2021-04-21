@@ -15,32 +15,29 @@ public class NewTask extends AppCompatActivity {
 
     Tehtava tehtavat;
     Button btSave;
-    Button btView;
-    EditText editText;
+    EditText editTask, editDate, editTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_task);
 
-        editText = (EditText) findViewById(R.id.ptTaskName);
+        editTask = (EditText) findViewById(R.id.ptTaskName);
+        editDate = (EditText) findViewById(R.id.ptTaskDate);
+        editTime = (EditText) findViewById(R.id.ptTaskTime);
         btSave = (Button) findViewById(R.id.btSave);
 
-        btView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
-                startActivity(intent);
-            }
-        });
+
 
         btSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newEntry = editText.getText().toString();
-                if (editText.length() != 0) {
-                    AddData(newEntry);
-                    editText.setText("");
+                String newTask = editTask.getText().toString();
+                String newDate = editDate.getText().toString();
+                String newTime = editTime.getText().toString();
+                if (editTask.length() != 0) {
+                    AddData(newTask);
+                    editTask.setText("");
                 } else {
                     Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
                 }
@@ -56,7 +53,6 @@ public class NewTask extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
         newTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent2 = new Intent(NewTask.this, NewTask.class);
