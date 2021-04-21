@@ -13,7 +13,7 @@ public class TIEDOT extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
-     setContentView(R.layout.activity_t_i_e_d_o_t);
+     setContentView(R.layout.activity_tiedot);
 
 
     TextView text =(TextView) findViewById(R.id.ptUserName);

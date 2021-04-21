@@ -17,6 +17,5 @@ public class MainActivity extends AppCompatActivity {
         Intent move = new Intent(this, Registration.class);
         startActivity(move);
 
-        if()
     }
 }
