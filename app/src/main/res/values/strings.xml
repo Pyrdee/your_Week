@@ -9,4 +9,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="bt_myprofile">myprofile button</string>
+    <string name="bt_calendar">go to calendar button</string>
+    <string name="bt_newtask">newtask button</string>
 </resources>
