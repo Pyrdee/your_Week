@@ -41,7 +41,7 @@ public class NewTask extends AppCompatActivity {
                     AddData(newEntry);
                     editText.setText("");
                 } else {
-                    Toast.makeText(NewTask.this, "You need to add info", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -52,9 +52,9 @@ public class NewTask extends AppCompatActivity {
         boolean insertData = tehtavat.addData(newEntry);
 
         if(insertData==true) {
-            Toast.makeText(NewTask.this, "Successfully entered", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
         } else  {
-            Toast.makeText(NewTask.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
 
         }
     }

@@ -16,5 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public void moveToRegistration(View view){
         Intent move = new Intent(this, Registration.class);
         startActivity(move);
+
+        if()
     }
 }
