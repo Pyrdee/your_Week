@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class NewTask extends AppCompatActivity {
 
     Tehtava tehtavat;
-    Button btSave;
+    Button btSave2;
     EditText editTask, editDate, editTime;
 
     @Override
@@ -25,11 +24,10 @@ public class NewTask extends AppCompatActivity {
         editTask = (EditText) findViewById(R.id.ptTaskName);
         editDate = (EditText) findViewById(R.id.ptTaskDate);
         editTime = (EditText) findViewById(R.id.ptTaskTime);
-        btSave = (Button) findViewById(R.id.btSave);
+        btSave2 = (Button) findViewById(R.id.btSave);
 
 
-
-        btSave.setOnClickListener(new View.OnClickListener() {
+        btSave2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String newTask = editTask.getText().toString();
@@ -67,11 +65,10 @@ public class NewTask extends AppCompatActivity {
         });
     }
 
-
     public void AddData(String newEntry) {
         boolean insertData = tehtavat.addData(newEntry);
 
-        if (insertData == true) {
+        if (insertData) {
             Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();

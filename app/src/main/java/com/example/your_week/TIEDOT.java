@@ -2,37 +2,38 @@ package com.example.your_week;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TIEDOT extends AppCompatActivity {
+    String ptUserName, ptUserAge, ptUserEmail;
 
-
-@Override
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-     super.onCreate(savedInstanceState);
-     setContentView(R.layout.activity_tiedot);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tiedot);
+    TextView name_user, age_user, email_user;
 
-     getSharedPreferences("UserData", MODE_PRIVATE);
+    name_user =findViewById(R.id.ptUserName);
+    age_user = findViewById(R.id.ptUserAge);
+    email_user = findViewById(R.id.ptUserEmail);
 
-    TextView text =(TextView) findViewById(R.id.ptUserName);
-    TextView tex =(TextView) findViewById(R.id.ptUserAge);
-    TextView te =(TextView) findViewById(R.id.ptUserEmail);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserData", MODE_PRIVATE);
+        String name = sharedPreferences.getString(ptUserName, "");
+        String age = sharedPreferences.getString(ptUserAge, "");
+        String email = sharedPreferences.getString(ptUserEmail, "");
 
-    Intent actIntent = getIntent();
-
-    String name = actIntent.getExtras().getString(Registration.EXTRA_TEXT);
-    String age = actIntent.getExtras().getString(Registration.EXTRA_TEXT1);
-    String Email = actIntent.getExtras().getString(Registration.EXTRA_TEXT2);
-
-    text.setText(name);
-    tex.setText(age);
-    te.setText(Email);
+        name_user.setText(name);
+        age_user.setText(age);
+        email_user.setText(email);
 
     ImageView calendar = findViewById(R.id.bt_calendar);
     ImageView newTask = findViewById(R.id.bt_newTask);

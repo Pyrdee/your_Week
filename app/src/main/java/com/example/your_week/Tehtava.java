@@ -16,6 +16,7 @@ public class Tehtava extends SQLiteOpenHelper {
     public static final String COL3 = "taskDate";
     public static final String COL4 = "taskTime";
 
+
     public Tehtava(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
