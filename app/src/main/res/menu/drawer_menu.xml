@@ -9,16 +9,16 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
             android:title="Oma profiili" />
+
+        <item
+            android:id="@+id/nav_task"
+            android:icon="@drawable/ic_newtask"
+            android:title="Luo uusi tehtävä" />
+        <item
+            android:id="@+id/nav_calendar_view"
+            android:icon="@drawable/ic_calendar"
+            android:title="Kalenteri" />
+
     </group>
-
-    <item android:title="---">
-        <menu>
-            <item
-                android:id="@+id/nav_task"
-                android:icon="@drawable/ic_newtask"
-                android:title="Luo uusi tehtävä" />
-
-        </menu>
-    </item>
 
 </menu>

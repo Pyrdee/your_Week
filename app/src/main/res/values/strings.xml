@@ -6,4 +6,7 @@
     <string name="pt_age">Ikä:</string>
     <string name="pt_nimi">Nimi:</string>
     <string name="todo">layout</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
