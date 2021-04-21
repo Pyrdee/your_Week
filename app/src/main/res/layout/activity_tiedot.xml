@@ -6,6 +6,8 @@
     android:background="#F8F7F5">
     <include layout="@layout/toolbar"/>
 
+    <include layout="@layout/toolbar"/>
+
     <TextView
         android:id="@+id/tvUserInfo"
         android:layout_width="wrap_content"

@@ -2,6 +2,7 @@ package com.example.your_week;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class TIEDOT extends AppCompatActivity {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_tiedot);
 
+     getSharedPreferences("UserData", MODE_PRIVATE);
 
     TextView text =(TextView) findViewById(R.id.ptUserName);
     TextView tex =(TextView) findViewById(R.id.ptUserAge);
