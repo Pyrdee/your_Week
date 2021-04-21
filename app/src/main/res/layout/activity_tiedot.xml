@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="106dp"
         android:gravity="center"
         android:text="TIEDOT:"
         android:textSize="24sp" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="161dp"
         android:text="Nimi:"
         android:textSize="18sp" />
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="242dp"
         android:text="Ikä:"
         android:textSize="18sp" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="298dp"
+        android:layout_marginTop="342dp"
         android:text="Sähköpostiosoite:"
         android:textSize="18sp" />
 
@@ -55,7 +55,7 @@
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="235dp"
+        android:layout_marginTop="274dp"
         android:textAlignment="center" />
 
     <TextView
@@ -64,7 +64,7 @@
         android:layout_height="44dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="329dp"
+        android:layout_marginTop="387dp"
         android:textAlignment="center" />
 
     <TextView
@@ -73,6 +73,6 @@
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="194dp"
         android:textAlignment="center" />
 </RelativeLayout>

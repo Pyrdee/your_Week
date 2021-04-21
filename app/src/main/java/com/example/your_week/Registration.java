@@ -53,8 +53,6 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
         }
 
-
-
         Intent intent = new Intent(this, TIEDOT.class);
 
         intent.putExtra(EXTRA_TEXT, text);
