@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:text=""
 
-            android:id="@+id/tv_yourWeek_header_text"
+            android:id="@+id/tv_toolbarTitle"
             android:layout_centerVertical="true"/>
 
         <ImageView
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_toEndOf="@id/tv_yourWeek_header_text"
+            android:layout_toEndOf="@id/tv_toolbarTitle"
             android:contentDescription="@string/bt_calendar"
             android:src="@drawable/ic_calendar" />
 
