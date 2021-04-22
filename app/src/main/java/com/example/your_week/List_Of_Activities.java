@@ -61,8 +61,8 @@ public class List_Of_Activities extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent2 = new Intent(List_Of_Activities.this, TIEDOT.class);
-                startActivity(intent2);
+                Intent intent3 = new Intent(List_Of_Activities.this, TIEDOT.class);
+                startActivity(intent3);
             }
         });
     }
