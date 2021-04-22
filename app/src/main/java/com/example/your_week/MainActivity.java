@@ -12,7 +12,6 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-    //private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       // if (sharedPreferences != null) {
-           // Intent move = new Intent(this, Registration.class);
-           // startActivity(move);
-       // } else {
-          //  Intent move = new Intent(this, List_Of_Activities.class);
-         //   startActivity(move);
         }
 
-    public void moveToRegistration(View view) {
-        Intent move = new Intent(this, Registration.class);
-        startActivity(move);
+
+
+        //Siirry eteenpäin. Katso löytyykö sharedprefences tiedostosta mitään. Jos löytyy, mene listanäkymään.
+    //SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
+
+    public void moveForward(View view) {
+        if (getSharedPreferences("UserData",MODE_PRIVATE) == null) {
+            Intent moveToRegistration = new Intent(this, List_Of_Activities.class);
+            startActivity(moveToRegistration);
+        } else {
+            Intent moveToRegistration = new Intent(this, Registration.class);
+            startActivity(moveToRegistration);
+        }
     }
 }
