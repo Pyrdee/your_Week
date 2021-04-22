@@ -16,11 +16,7 @@ import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
 
-    public static final String EXTRA_TEXT = "name";
-    public static final String EXTRA_TEXT1 = "age";
-    public static final String EXTRA_TEXT2 = "email";
-
-@Override
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_registration);
@@ -31,37 +27,35 @@ public class Registration extends AppCompatActivity {
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
         Intent intent = new Intent(this, TIEDOT.class);
 
-        EditText editText = (EditText) findViewById(R.id.ptName);
-        EditText editText1 = (EditText) findViewById(R.id.ptAge);
-        EditText editText2 = (EditText) findViewById(R.id.ptEmail);
+        EditText editName = (EditText) findViewById(R.id.ptName);
+        EditText editAge = (EditText) findViewById(R.id.ptAge);
+        EditText editEmail = (EditText) findViewById(R.id.ptEmail);
 
-        myEdit.putString("name", editText.getText().toString());
-        myEdit.putString("age", editText1.getText().toString());
-        myEdit.putString("email", editText2.getText().toString());
+        myEdit.putString("name", editName .getText().toString());
+        myEdit.putString("age", editAge.getText().toString());
+        myEdit.putString("email", editEmail.getText().toString());
 
-        String user_name = editText.getText().toString();
-        String user_age = editText1.getText().toString();
-        String user_email = editText2.getText().toString();
+        String user_name = editName .getText().toString();
+        String user_age = editAge.getText().toString();
+        String user_email = editEmail.getText().toString();
 
         if(TextUtils.isEmpty(user_name)) {
-            editText.setError("Ei nimeä");
+            editName.setError("Ei nimeä");
             Toast.makeText(Registration.this,"Lisää vielä nimi", Toast.LENGTH_SHORT).show();
         }
         if(TextUtils.isEmpty(user_age)) {
-            editText.setError("Ei ikää");
+            editAge.setError("Ei ikää");
             Toast.makeText(Registration.this,"Lisää vielä ikä", Toast.LENGTH_SHORT).show();
         }
         if(TextUtils.isEmpty(user_email)) {
-            editText.setError("Ei sähköpostia");
+            editEmail.setError("Ei sähköpostia");
             Toast.makeText(Registration.this,"Lisää vielä sähköpostiosoite", Toast.LENGTH_SHORT).show();
         } else {
-            intent.putExtra(EXTRA_TEXT, user_name);
-            intent.putExtra(EXTRA_TEXT1, user_age);
-            intent.putExtra(EXTRA_TEXT2, user_email);
             Toast.makeText(Registration.this, "Tiedot tallennettu!", Toast.LENGTH_LONG).show();
         }
 
         myEdit.commit();
         startActivity(intent);
+
     }
 }

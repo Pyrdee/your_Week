@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,20 +28,24 @@ public class NewTask extends AppCompatActivity {
         btSave2 = (Button) findViewById(R.id.btSave);
 
 
-        btSave2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String newTask = editTask.getText().toString();
-                String newDate = editDate.getText().toString();
-                String newTime = editTime.getText().toString();
-                if (editTask.length() != 0) {
-                    AddData(newTask);
-                    editTask.setText("");
-                } else {
-                    Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        //btSave2.setOnClickListener(new View.OnClickListener()
+        {
+            //@Override
+            //public void onClick(View v) {
+               // String newTask = editTask.getText().toString();
+                //String newDate = editDate.getText().toString();
+               // String newTime = editTime.getText().toString();
+                //if (editTask.length() != 0) {
+                   // AddData(newTask);
+                   // editTask.setText("");
+               // } else {
+               //     Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
+              //  }
+         //   }
+      //  });
+
+
+
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
@@ -64,15 +69,14 @@ public class NewTask extends AppCompatActivity {
             }
         });
     }
+   // public void AddData(String newEntry) {
+       // boolean insertData = tehtavat.addData(newEntry);
 
-    public void AddData(String newEntry) {
-        boolean insertData = tehtavat.addData(newEntry);
+       // if (insertData) {
+        //    Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
+       // } else {
+       //     Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
 
-        if (insertData) {
-            Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
-
-        }
+      //  }
     }
 }

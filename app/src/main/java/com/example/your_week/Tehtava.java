@@ -12,9 +12,9 @@ public class Tehtava extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "tehtavalista.db";
     public static final String TABLE_NAME = "paivan_tehtavat_data";
     public static final String COL1 = "ID";
-    public static final String COL2 = "job";
-    public static final String COL3 = "taskDate";
-    public static final String COL4 = "taskTime";
+    public static final String COL2 = "";
+    public static final Integer COL3 = null;
+    public static final Integer COL4 = null;
 
 
     public Tehtava(Context context) {

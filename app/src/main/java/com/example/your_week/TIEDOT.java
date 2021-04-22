@@ -26,14 +26,6 @@ public class TIEDOT extends AppCompatActivity {
 
     Intent actIntent = getIntent();
 
-    String name = actIntent.getExtras().getString(Registration.EXTRA_TEXT);
-    String age = actIntent.getExtras().getString(Registration.EXTRA_TEXT1);
-    String Email = actIntent.getExtras().getString(Registration.EXTRA_TEXT2);
-
-    text.setText(name);
-    tex.setText(age);
-    te.setText(Email);
-
     ImageView calendar = findViewById(R.id.bt_calendar);
     ImageView newTask = findViewById(R.id.bt_newTask);
     ImageView myProfile = findViewById(R.id.bt_myProfile);
