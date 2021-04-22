@@ -5,11 +5,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,17 +19,19 @@ import java.util.ArrayList;
 public class List_Of_Activities extends AppCompatActivity {
 
     Tehtava tehtava;
+    ListView lvTasks;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-        ListView listView = (ListView) findViewById(R.id.lvTehtavat);
+        ListView lvTasks = (ListView) findViewById(R.id.lvTehtavat);
         tehtava = new Tehtava(this);
 
         ArrayList<String> theList = new ArrayList<>();
         Cursor data = tehtava.getListContents();
+
 
         if(data.getCount() == 0) {
             Toast.makeText(List_Of_Activities.this, "Tehtävälista on tyhjä", Toast.LENGTH_LONG).show();
@@ -39,9 +40,18 @@ public class List_Of_Activities extends AppCompatActivity {
             while(data.moveToNext()) {
                 theList.add(data.getString(1));
                 ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, theList);
-                listView.setAdapter(listAdapter);
+                lvTasks.setAdapter(listAdapter);
             }
         }
+
+
+
+
+
+
+
+
+
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
