@@ -12,27 +12,27 @@ import android.widget.TextView;
 public class TIEDOT extends AppCompatActivity {
 
 
-    @Override
+@Override
 
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tiedot);
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.activity_tiedot);
 
      getSharedPreferences("UserData", MODE_PRIVATE);
 
-        TextView text =(TextView) findViewById(R.id.ptUserName);
-        TextView tex =(TextView) findViewById(R.id.ptUserAge);
-        TextView te =(TextView) findViewById(R.id.ptUserEmail);
+    TextView text =(TextView) findViewById(R.id.ptUserName);
+    TextView tex =(TextView) findViewById(R.id.ptUserAge);
+    TextView te =(TextView) findViewById(R.id.ptUserEmail);
 
-        Intent actIntent = getIntent();
+    Intent actIntent = getIntent();
 
-        String name = actIntent.getExtras().getString(Registration.EXTRA_TEXT);
-        String age = actIntent.getExtras().getString(Registration.EXTRA_TEXT1);
-        String Email = actIntent.getExtras().getString(Registration.EXTRA_TEXT2);
+    String name = actIntent.getExtras().getString(Registration.EXTRA_TEXT);
+    String age = actIntent.getExtras().getString(Registration.EXTRA_TEXT1);
+    String Email = actIntent.getExtras().getString(Registration.EXTRA_TEXT2);
 
-        text.setText(name);
-        tex.setText(age);
-        te.setText(Email);
+    text.setText(name);
+    tex.setText(age);
+    te.setText(Email);
 
     ImageView calendar = findViewById(R.id.bt_calendar);
     ImageView newTask = findViewById(R.id.bt_newTask);
@@ -60,3 +60,4 @@ public class TIEDOT extends AppCompatActivity {
 
     }
 }
+

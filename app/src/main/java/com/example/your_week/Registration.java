@@ -29,7 +29,7 @@ public class Registration extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
-
+        Intent intent = new Intent(this, TIEDOT.class);
 
         EditText editText = (EditText) findViewById(R.id.ptName);
         EditText editText1 = (EditText) findViewById(R.id.ptAge);
@@ -39,28 +39,29 @@ public class Registration extends AppCompatActivity {
         myEdit.putString("age", editText1.getText().toString());
         myEdit.putString("email", editText2.getText().toString());
 
-        String text = editText.getText().toString();
-        String text1 = editText1.getText().toString();
-        String text2 = editText2.getText().toString();
+        String user_name = editText.getText().toString();
+        String user_age = editText1.getText().toString();
+        String user_email = editText2.getText().toString();
 
-        if(TextUtils.isEmpty(text)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(user_name)) {
+            editText.setError("Ei nimeä");
+            Toast.makeText(Registration.this,"Lisää vielä nimi", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(text1)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(user_age)) {
+            editText.setError("Ei ikää");
+            Toast.makeText(Registration.this,"Lisää vielä ikä", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(text2)) {
-            Toast.makeText(Registration.this, "Täytä puuttuvat tiedot", Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(user_email)) {
+            editText.setError("Ei sähköpostia");
+            Toast.makeText(Registration.this,"Lisää vielä sähköpostiosoite", Toast.LENGTH_SHORT).show();
+        } else {
+            intent.putExtra(EXTRA_TEXT, user_name);
+            intent.putExtra(EXTRA_TEXT1, user_age);
+            intent.putExtra(EXTRA_TEXT2, user_email);
+            Toast.makeText(Registration.this, "Tiedot tallennettu!", Toast.LENGTH_LONG).show();
         }
 
-        Intent intent = new Intent(this, TIEDOT.class);
-
-        intent.putExtra(EXTRA_TEXT, text);
-        intent.putExtra(EXTRA_TEXT1, text1);
-        intent.putExtra(EXTRA_TEXT2, text2);
-
-        myEdit.apply();
-
+        myEdit.commit();
         startActivity(intent);
     }
 }
