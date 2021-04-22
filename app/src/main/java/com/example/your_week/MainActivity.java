@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         });
        // public void moveToRegistration (View view);
 
+
+
         if (sharedPreferences != null) {
             Intent move = new Intent(this, Registration.class);
             startActivity(move);
@@ -51,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
             Intent move = new Intent(this, List_Of_Activities.class);
             startActivity(move);
         }
+    }
+
+    public void moveToRegistration(View view) {
+        Intent move = new Intent(this, Registration.class);
+        startActivity(move);
     }
 }
