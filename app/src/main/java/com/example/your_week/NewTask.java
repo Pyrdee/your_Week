@@ -59,8 +59,8 @@ public class NewTask extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent2 = new Intent(NewTask.this, TIEDOT.class);
-                startActivity(intent2);
+                Intent intent3 = new Intent(NewTask.this, TIEDOT.class);
+                startActivity(intent3);
             }
         });
     }

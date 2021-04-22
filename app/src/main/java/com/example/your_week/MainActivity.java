@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this, TIEDOT.class);
-                startActivity(intent2);
+                Intent intent3 = new Intent(MainActivity.this, TIEDOT.class);
+                startActivity(intent3);
             }
         });
        // public void moveToRegistration (View view);
