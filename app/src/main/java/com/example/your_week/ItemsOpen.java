@@ -32,7 +32,7 @@ public class ItemsOpen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-        listView = findViewById(R.id.Tehtavat);
+        listView = findViewById(R.id.lvTehtavat);
         ArrayAdapter<String>adapter = new ArrayAdapter<String>(ItemsOpen.this, android.R.layout.simple_list_item_1);
          listView.setAdapter(adapter);
          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

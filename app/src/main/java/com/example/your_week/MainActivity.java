@@ -12,7 +12,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-    private SharedPreferences sharedPreferences;
+    //private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //if (sharedPreferences != null) {
-            //Intent move = new Intent(this, Registration.class);
-          //  startActivity(move);
-        //} else {
-           // Intent move = new Intent(this, List_Of_Activities.class);
+
+
+       // if (sharedPreferences != null) {
+           // Intent move = new Intent(this, Registration.class);
+           // startActivity(move);
+       // } else {
+          //  Intent move = new Intent(this, List_Of_Activities.class);
          //   startActivity(move);
-       // }
+        }
+
+    public void moveToRegistration(View view) {
+        Intent move = new Intent(this, Registration.class);
+        startActivity(move);
     }
 }

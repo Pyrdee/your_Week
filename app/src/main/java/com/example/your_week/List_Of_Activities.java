@@ -26,7 +26,7 @@ public class List_Of_Activities extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-        ListView listView = (ListView) findViewById(R.id.Tehtavat);
+        ListView listView = (ListView) findViewById(R.id.lvTehtavat);
         tehtava = new Tehtava(this);
 
         ArrayList<String> theList = new ArrayList<>();
