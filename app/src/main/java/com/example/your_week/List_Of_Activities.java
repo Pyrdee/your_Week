@@ -40,6 +40,7 @@ public class List_Of_Activities extends AppCompatActivity {
 
         if (taskModels.size() > 0) {
             TaskAdapterClass taskAdapterClass = new TaskAdapterClass(taskModels,List_Of_Activities.this);
+            recyclerView.setAdapter(taskAdapterClass);
         }else {
             Toast.makeText(this, "Aloita lisäämällä uusi tehtävä!", Toast.LENGTH_SHORT).show();
         }
