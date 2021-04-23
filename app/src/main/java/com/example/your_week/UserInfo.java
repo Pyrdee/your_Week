@@ -2,18 +2,14 @@ package com.example.your_week;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TIEDOT extends AppCompatActivity {
+public class UserInfo extends AppCompatActivity {
     TextView text_name, text_age, text_email;
     SharedPreferences sharedPreferences;
 
@@ -50,20 +46,20 @@ public class TIEDOT extends AppCompatActivity {
 
         calendar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent1 = new Intent(TIEDOT.this, List_Of_Activities.class);
+                Intent intent1 = new Intent(UserInfo.this, List_Of_Activities.class);
                 startActivity(intent1);
             }
         });
 
         newTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent2 = new Intent(TIEDOT.this, NewTask.class);
+                Intent intent2 = new Intent(UserInfo.this, NewTask.class);
                 startActivity(intent2);
             }
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent3 = new Intent(TIEDOT.this, TIEDOT.class);
+                Intent intent3 = new Intent(UserInfo.this, UserInfo.class);
                 startActivity(intent3);
             }
         });

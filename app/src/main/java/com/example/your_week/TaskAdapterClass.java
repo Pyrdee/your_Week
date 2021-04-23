@@ -52,7 +52,7 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
                 String stringTime = holder.editText_Time.getText().toString();
 
                 taskDataHelper.updateTask(new TaskModel(taskModel.getId(),
-                        stringTask,stringDate,stringTime));
+                        stringTask, stringDate, stringTime));
                 notifyDataSetChanged();
                 ((Activity) context).finish();
                 context.startActivity(((Activity) context).getIntent());

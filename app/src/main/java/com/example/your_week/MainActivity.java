@@ -3,9 +3,7 @@ package com.example.your_week;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.service.autofill.UserData;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent3 = new Intent(MainActivity.this, TIEDOT.class);
+                Intent intent3 = new Intent(MainActivity.this, UserInfo.class);
                 startActivity(intent3);
             }
         });

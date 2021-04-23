@@ -2,17 +2,12 @@ package com.example.your_week;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
 
@@ -52,7 +47,7 @@ public class Registration extends AppCompatActivity {
                                           myEdit.putString(KEY_AGE, ptAge.getText().toString());
                                           myEdit.putString(KEY_EMAIL, ptEmail.getText().toString());
                                           myEdit.apply();
-                                          Intent intent = new Intent(Registration.this, TIEDOT.class);
+                                          Intent intent = new Intent(Registration.this, UserInfo.class);
 
                                           startActivity(intent);
 

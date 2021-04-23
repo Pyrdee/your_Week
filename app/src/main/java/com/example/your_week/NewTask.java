@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,7 +70,7 @@ public class NewTask extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent3 = new Intent(NewTask.this, TIEDOT.class);
+                Intent intent3 = new Intent(NewTask.this, UserInfo.class);
                 startActivity(intent3);
             }
         });

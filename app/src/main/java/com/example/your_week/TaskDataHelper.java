@@ -78,18 +78,19 @@ public class TaskDataHelper extends SQLiteOpenHelper {
         return storeTasks;
     }
 
-    public void updateTask(TaskModel taskModel){
+    public void updateTask(TaskModel taskModel) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TaskDataHelper.TASKNAME,taskModel.getTaskName());
-        contentValues.put(TaskDataHelper.DATE,taskModel.getTaskDate());
-        contentValues.put(TaskDataHelper.TIME,taskModel.getTaskTime());
+        contentValues.put(TaskDataHelper.TASKNAME, taskModel.getTaskName());
+        contentValues.put(TaskDataHelper.DATE, taskModel.getTaskDate());
+        contentValues.put(TaskDataHelper.TIME, taskModel.getTaskTime());
         sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.update(TABLE_NAME,contentValues,ID + " = ?", new String[]
+        sqLiteDatabase.update(TABLE_NAME, contentValues, ID + " = ?", new String[]
                 {String.valueOf(taskModel.getId())});
     }
-    public void deleteTask(int id){
+
+    public void deleteTask(int id) {
         sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.delete(TABLE_NAME,ID + " = ? ", new String[]
+        sqLiteDatabase.delete(TABLE_NAME, ID + " = ? ", new String[]
                 {String.valueOf(id)});
     }
 

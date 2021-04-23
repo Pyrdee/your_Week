@@ -1,23 +1,15 @@
 package com.example.your_week;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class List_Of_Activities extends AppCompatActivity {
@@ -67,7 +59,7 @@ public class List_Of_Activities extends AppCompatActivity {
         });
         myProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent3 = new Intent(List_Of_Activities.this, TIEDOT.class);
+                Intent intent3 = new Intent(List_Of_Activities.this, UserInfo.class);
                 startActivity(intent3);
             }
         });
