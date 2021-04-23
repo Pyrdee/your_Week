@@ -30,7 +30,6 @@
         android:layout_marginBottom="150dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Tallenna"
-        android:onClick="SendValues"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,6 +92,4 @@
             android:hint="@string/pt_email"
             android:inputType="textEmailAddress" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

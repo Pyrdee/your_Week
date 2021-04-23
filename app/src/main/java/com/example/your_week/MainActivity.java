@@ -43,23 +43,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
-
-
-
-        }
-
-
-
-        //Siirry eteenpäin. Katso löytyykö sharedprefences tiedostosta mitään. Jos löytyy, mene listanäkymään.
-    //SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
-
-    public void moveForward(View view) {
-        if (getSharedPreferences("UserData",MODE_PRIVATE) == null) {
-            Intent moveToRegistration = new Intent(this, List_Of_Activities.class);
-            startActivity(moveToRegistration);
-        } else {
-            Intent moveToRegistration = new Intent(this, Registration.class);
-            startActivity(moveToRegistration);
-        }
     }
 }

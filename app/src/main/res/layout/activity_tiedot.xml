@@ -3,8 +3,8 @@
     android:id="@+id/UserInfo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#F8F7F5">
-    <include layout="@layout/toolbar"/>
+    android:background="#F8F7F5"
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar"/>
 
@@ -17,7 +17,7 @@
         android:layout_marginTop="106dp"
         android:gravity="center"
         android:text="TIEDOT:"
-        android:textSize="24sp" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/tvUserName"
@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="161dp"
         android:text="Nimi:"
-        android:textSize="18sp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/tvUserAge"
@@ -37,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="242dp"
         android:text="Ikä:"
-        android:textSize="18sp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/tvUserEmail"
@@ -47,16 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="342dp"
         android:text="Sähköpostiosoite:"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/ptUserName"
-        android:layout_width="244dp"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="194dp"
-        android:textAlignment="center" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/ptUserAge"
@@ -65,7 +56,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="274dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/ptUserName"
+        android:layout_width="244dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="194dp"
+        android:textAlignment="center"
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/ptUserEmail"
@@ -74,5 +75,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="387dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="22dp" />
+
 </RelativeLayout>

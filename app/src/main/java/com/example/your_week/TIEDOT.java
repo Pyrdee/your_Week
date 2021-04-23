@@ -8,35 +8,39 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TIEDOT extends AppCompatActivity {
+    TextView text_name, text_age, text_email;
+    SharedPreferences sharedPreferences;
 
-
+    private static final String SHARED_PREF_NAME = "userData";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_AGE = "age";
+    private static final String KEY_EMAIL = "email";
 @Override
-
     protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_tiedot);
+     // alustus
+    text_name = findViewById(R.id.ptUserName);
+    text_age = findViewById(R.id.ptUserAge);
+    text_email = findViewById(R.id.ptUserEmail);
 
-    // Tietojen haku sharedpreferencestä
-    SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
-    getSharedPreferences("UserData", MODE_PRIVATE);
-    /**
-    SharedPreferences age = getSharedPreferences("age", MODE_PRIVATE);
-    SharedPreferences email = getSharedPreferences("email", MODE_PRIVATE);
+    // tietojen haku käyttäen shared prefs
+    sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+    String name = sharedPreferences.getString(KEY_NAME, null);
+    String age = sharedPreferences.getString(KEY_AGE, null);
+    String email = sharedPreferences.getString(KEY_EMAIL, null);
 
-    Intent actIntent = getIntent();
-    TextView usname =(TextView) findViewById(R.id.ptUserName);
-    TextView usage =(TextView) findViewById(R.id.ptUserAge);
-    TextView usemail =(TextView) findViewById(R.id.ptUserEmail);
-
-    SharedPreferences user_age = getSharedPreferences("age", MODE_PRIVATE);
-    SharedPreferences user_name = getSharedPreferences("name", MODE_PRIVATE);
-    SharedPreferences user_email = getSharedPreferences("email", MODE_PRIVATE);
-     **/
+    if (name != null || age != null || email != null) {
+        text_name.setText("" +name);
+        text_age.setText("" +age);
+        text_email.setText("" +email);
+    }
 
     // upbarissa olevat komponentit
     ImageView calendar = findViewById(R.id.bt_calendar);
@@ -62,7 +66,6 @@ public class TIEDOT extends AppCompatActivity {
             startActivity(intent3);
         }
     });
-
     }
 }
 
