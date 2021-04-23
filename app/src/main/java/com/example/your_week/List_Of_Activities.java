@@ -26,6 +26,7 @@ public class List_Of_Activities extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
+        //listaus luoduista tehtävistä, tehtävien haku SQL muistista
         ListView listView = (ListView) findViewById(R.id.lvTehtavat);
         tehtava = new Tehtava(this);
 
@@ -42,6 +43,8 @@ public class List_Of_Activities extends AppCompatActivity {
                 listView.setAdapter(listAdapter);
             }
         }
+
+        //// upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);

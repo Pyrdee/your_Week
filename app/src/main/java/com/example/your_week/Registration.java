@@ -22,6 +22,7 @@ public class Registration extends AppCompatActivity {
     setContentView(R.layout.activity_registration);
 }
     public void SendValues(View view) {
+        //käyttäjän tietojen pyytäminen ja niiden tallennus sharedpreferences tietokantaan
 
         SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
@@ -54,7 +55,7 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(Registration.this, "Tiedot tallennettu!", Toast.LENGTH_LONG).show();
         }
 
-        myEdit.commit();
+        myEdit.apply();
         startActivity(intent);
 
     }

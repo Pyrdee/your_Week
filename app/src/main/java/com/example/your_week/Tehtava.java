@@ -9,6 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.security.PublicKey;
 
 public class Tehtava extends SQLiteOpenHelper {
+
+    //apukansio SQL-tietokannalle tietojen tallennusmuodosta
+
     public static final String DATABASE_NAME = "tehtavalista.db";
     public static final String TABLE_NAME = "paivan_tehtavat_data";
     public static final String COL1 = "ID";
