@@ -12,7 +12,6 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +44,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
-
 
 
     //Siirry eteenpäin rekisteröintisivulle.
     //Seuraavalla sivulla tarkistetaan onko käyttäjä jo rekisteröitynyt.
 
     public void moveForward(View view) {
-            Intent moveToRegistration = new Intent(this, Registration.class);
-            startActivity(moveToRegistration);
+        Intent moveToRegistration = new Intent(this, Registration.class);
+        startActivity(moveToRegistration);
     }
 }

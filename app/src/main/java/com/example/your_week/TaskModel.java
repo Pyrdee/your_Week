@@ -7,13 +7,14 @@ public class TaskModel {
     String taskDate;
     String taskTime;
 
-    //constructor
+    //rakentaja ilman id-kenttää
     public TaskModel(String taskName, String taskDate, String taskTime) {
         this.taskName = taskName;
         this.taskDate = taskDate;
         this.taskTime = taskTime;
     }
 
+    //rakentaja
     public TaskModel(int id, String taskName, String taskDate, String taskTime) {
         this.id = id;
         this.taskName = taskName;

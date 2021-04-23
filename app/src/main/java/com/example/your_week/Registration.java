@@ -16,49 +16,49 @@ import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
 
-        EditText ptName, ptAge, ptEmail;
-        Button btSave;
-        SharedPreferences sharedPreferences;
+    EditText ptName, ptAge, ptEmail;
+    Button btSave;
+    SharedPreferences sharedPreferences;
 
-        private static final String SHARED_PREF_NAME = "userData";
-        private static final String KEY_NAME = "name";
-        private static final String KEY_AGE = "age";
-        private static final String KEY_EMAIL = "email";
+    private static final String SHARED_PREF_NAME = "userData";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_AGE = "age";
+    private static final String KEY_EMAIL = "email";
 
-   @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_registration);
-    //alustus
-    ptName = findViewById(R.id.ptName);
-    ptAge = findViewById(R.id.ptAge);
-    ptEmail = findViewById(R.id.ptEmail);
-    btSave = findViewById(R.id.btSave);
-    // shared prefs esittely
-    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_registration);
+        //alustus
+        ptName = findViewById(R.id.ptName);
+        ptAge = findViewById(R.id.ptAge);
+        ptEmail = findViewById(R.id.ptEmail);
+        btSave = findViewById(R.id.btSave);
+        // shared prefs esittely
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);
 
         if (name != null) {
-            Intent intent = new Intent (Registration.this, List_Of_Activities.class);
+            Intent intent = new Intent(Registration.this, List_Of_Activities.class);
             startActivity(intent);
         }
         // tietojen tallennus nappia painaessa
         btSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                      @Override
+                                      public void onClick(View v) {
 
-                SharedPreferences.Editor myEdit = sharedPreferences.edit();
-                myEdit.putString(KEY_NAME, ptName.getText().toString());
-                myEdit.putString(KEY_AGE, ptAge.getText().toString());
-                myEdit.putString(KEY_EMAIL, ptEmail.getText().toString());
-                myEdit.apply();
-                Intent intent = new Intent(Registration.this, TIEDOT.class);
+                                          SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                                          myEdit.putString(KEY_NAME, ptName.getText().toString());
+                                          myEdit.putString(KEY_AGE, ptAge.getText().toString());
+                                          myEdit.putString(KEY_EMAIL, ptEmail.getText().toString());
+                                          myEdit.apply();
+                                          Intent intent = new Intent(Registration.this, TIEDOT.class);
 
-                startActivity(intent);
+                                          startActivity(intent);
 
-            }
+                                      }
 
-            }
+                                  }
         );
     }
 

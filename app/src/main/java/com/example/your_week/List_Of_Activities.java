@@ -37,17 +37,14 @@ public class List_Of_Activities extends AppCompatActivity {
 
         TaskDataHelper taskDataHelper = new TaskDataHelper(this);
         List<TaskModel> taskModels = taskDataHelper.getTaskList();
-
+        //Tarkistetaan onko listalla objekteja, jos on asetetaan ne recycleviewiin.
         if (taskModels.size() > 0) {
-            TaskAdapterClass taskAdapterClass = new TaskAdapterClass(taskModels,List_Of_Activities.this);
+            TaskAdapterClass taskAdapterClass = new TaskAdapterClass(taskModels, List_Of_Activities.this);
             recyclerView.setAdapter(taskAdapterClass);
-        }else {
+            //Jos listalla ei ole mitään, annetaan toasti: Aloita lisäämällä uusi tehtävä!
+        } else {
             Toast.makeText(this, "Aloita lisäämällä uusi tehtävä!", Toast.LENGTH_SHORT).show();
         }
-
-
-
-
 
 
         // upbarissa olevat komponentit:

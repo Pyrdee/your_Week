@@ -35,12 +35,13 @@ public class NewTask extends AppCompatActivity {
                 String stringTask = editTask.getText().toString();
                 String stringDate = editDate.getText().toString();
                 String stringTime = editTime.getText().toString();
-
-                if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0){
+                //Varmistetaan että kaikki kentät on täytetty.
+                if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
                     Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
                 } else {
+                    //Siirretään ruutuihin tallennetut tiedot addTask
                     TaskDataHelper taskDataHelper = new TaskDataHelper(NewTask.this);
-                    TaskModel taskModel = new TaskModel(stringTask,stringDate,stringTime);
+                    TaskModel taskModel = new TaskModel(stringTask, stringDate, stringTime);
                     taskDataHelper.addTask(taskModel);
                     Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
 
@@ -51,14 +52,7 @@ public class NewTask extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-            // upbarissa olevat komponentit
+        // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
@@ -82,14 +76,6 @@ public class NewTask extends AppCompatActivity {
             }
         });
     }
-   // public void AddData(String newEntry) {
-       // boolean insertData = tehtavat.addData(newEntry);
 
-       // if (insertData) {
-        //    Toast.makeText(NewTask.this, "Tehtävä lisätty!", Toast.LENGTH_LONG).show();
-       // } else {
-       //     Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
-
-      //  }
 
 }
