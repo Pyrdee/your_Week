@@ -8,7 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.security.PublicKey;
 
-public class Tehtava extends SQLiteOpenHelper {
+/*public class Tehtava extends SQLiteOpenHelper {
+
 
     //apukansio SQL-tietokannalle tietojen tallennusmuodosta
 
@@ -55,5 +56,5 @@ public class Tehtava extends SQLiteOpenHelper {
         Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
         return data;
     }
-
-}
+    }
+*/

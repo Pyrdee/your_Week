@@ -14,37 +14,42 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class List_Of_Activities extends AppCompatActivity {
 
-    Tehtava tehtava;
+    RecyclerView recyclerView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-        //listaus luoduista tehtävistä, tehtävien haku SQL muistista
-        ListView listView = (ListView) findViewById(R.id.lvTehtavat);
-        tehtava = new Tehtava(this);
 
-        ArrayList<String> theList = new ArrayList<>();
-        Cursor data = tehtava.getListContents();
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
-        if(data.getCount() == 0) {
-            Toast.makeText(List_Of_Activities.this, "Tehtävälista on tyhjä", Toast.LENGTH_LONG).show();
 
-        } else{
-            while(data.moveToNext()) {
-                theList.add(data.getString(1));
-                ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, theList);
-                listView.setAdapter(listAdapter);
-            }
+        TaskDataHelper taskDataHelper = new TaskDataHelper(this);
+        List<TaskModel> taskModels = taskDataHelper.getTaskList();
+
+        if (taskModels.size() > 0) {
+            TaskAdapterClass taskAdapterClass = new TaskAdapterClass(taskModels,List_Of_Activities.this);
+        }else {
+            Toast.makeText(this, "Aloita lisäämällä uusi tehtävä!", Toast.LENGTH_SHORT).show();
         }
 
-        // upbarissa olevat komponentit
+
+
+
+
+
+        // upbarissa olevat komponentit:
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);

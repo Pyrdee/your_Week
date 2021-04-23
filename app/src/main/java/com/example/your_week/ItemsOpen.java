@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+/*
 public class ItemsOpen extends AppCompatActivity {
     ListView listView;
 
@@ -47,4 +47,4 @@ public class ItemsOpen extends AppCompatActivity {
          });
 
     }
-}
+}*/

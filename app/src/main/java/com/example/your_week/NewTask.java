@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class NewTask extends AppCompatActivity {
 
-    Tehtava tehtavat;
-    Button btSave2;
+    //Viitteet nappeihin ja muihin toimintoihin layoutissa
+    Button btSaveTask;
     EditText editTask, editDate, editTime;
 
     @Override
@@ -22,27 +22,40 @@ public class NewTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_task);
 
-        editTask = (EditText) findViewById(R.id.ptTaskName);
-        editDate = (EditText) findViewById(R.id.ptTaskDate);
-        editTime = (EditText) findViewById(R.id.ptTaskTime);
-        btSave2 = (Button) findViewById(R.id.btSave);
+
+        btSaveTask = findViewById(R.id.btSaveNewTask);
+        editTask = findViewById(R.id.ptTaskName);
+        editDate = findViewById(R.id.ptTaskDate);
+        editTime = findViewById(R.id.ptTaskTime);
+
+        //Tallennusnapin tallennus
+        btSaveTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String stringTask = editTask.getText().toString();
+                String stringDate = editDate.getText().toString();
+                String stringTime = editTime.getText().toString();
+
+                if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0){
+                    Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
+                } else {
+                    TaskDataHelper taskDataHelper = new TaskDataHelper(NewTask.this);
+                    TaskModel taskModel = new TaskModel(stringTask,stringDate,stringTime);
+                    taskDataHelper.addTask(taskModel);
+                    Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
+
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+        });
 
 
-        //btSave2.setOnClickListener(new View.OnClickListener()
-        {
-            //@Override
-            //public void onClick(View v) {
-               // String newTask = editTask.getText().toString();
-                //String newDate = editDate.getText().toString();
-               // String newTime = editTime.getText().toString();
-                //if (editTask.length() != 0) {
-                   // AddData(newTask);
-                   // editTask.setText("");
-               // } else {
-               //     Toast.makeText(NewTask.this, "Lisää tehtävä", Toast.LENGTH_LONG).show();
-              //  }
-         //   }
-      //  });
+
+
+
+
+
 
 
             // upbarissa olevat komponentit
@@ -78,5 +91,5 @@ public class NewTask extends AppCompatActivity {
        //     Toast.makeText(NewTask.this, "Jotain meni pieleen", Toast.LENGTH_LONG).show();
 
       //  }
-    }
+
 }

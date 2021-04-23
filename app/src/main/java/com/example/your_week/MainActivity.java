@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // upbarissa olevat komponentit
+        // Upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
@@ -56,6 +56,5 @@ public class MainActivity extends AppCompatActivity {
     public void moveForward(View view) {
             Intent moveToRegistration = new Intent(this, Registration.class);
             startActivity(moveToRegistration);
-
     }
 }
