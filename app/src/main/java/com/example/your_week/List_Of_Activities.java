@@ -44,7 +44,7 @@ public class List_Of_Activities extends AppCompatActivity {
             }
         }
 
-        //// upbarissa olevat komponentit
+        // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
