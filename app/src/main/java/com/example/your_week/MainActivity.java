@@ -12,14 +12,12 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-    //private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
         ImageView newTask = findViewById(R.id.bt_newTask);
         ImageView myProfile = findViewById(R.id.bt_myProfile);
@@ -46,18 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       // if (sharedPreferences != null) {
-           // Intent move = new Intent(this, Registration.class);
-           // startActivity(move);
-       // } else {
-          //  Intent move = new Intent(this, List_Of_Activities.class);
-         //   startActivity(move);
         }
 
 
-        // Siirtyminen seuraavaan aktiviteettiin nappia painamala
-    public void moveToRegistration(View view) {
-        Intent move = new Intent(this, Registration.class);
-        startActivity(move);
+
+        //Siirry eteenpäin. Katso löytyykö sharedprefences tiedostosta mitään. Jos löytyy, mene listanäkymään.
+    //SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
+
+    public void moveForward(View view) {
+        if (getSharedPreferences("UserData",MODE_PRIVATE) == null) {
+            Intent moveToRegistration = new Intent(this, List_Of_Activities.class);
+            startActivity(moveToRegistration);
+        } else {
+            Intent moveToRegistration = new Intent(this, Registration.class);
+            startActivity(moveToRegistration);
+        }
     }
 }

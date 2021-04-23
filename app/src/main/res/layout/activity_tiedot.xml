@@ -50,6 +50,15 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/ptUserName"
+        android:layout_width="244dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="194dp"
+        android:textAlignment="center" />
+
+    <TextView
         android:id="@+id/ptUserAge"
         android:layout_width="74dp"
         android:layout_height="35dp"
@@ -65,14 +74,5 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="387dp"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/ptUserName"
-        android:layout_width="244dp"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="194dp"
         android:textAlignment="center" />
 </RelativeLayout>
