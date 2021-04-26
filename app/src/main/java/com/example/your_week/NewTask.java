@@ -60,6 +60,8 @@ public class NewTask extends AppCompatActivity {
             }
         };
 
+
+
         //Tallennusnapin tallennus
         btSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
