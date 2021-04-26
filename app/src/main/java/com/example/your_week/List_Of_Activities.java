@@ -35,7 +35,7 @@ public class List_Of_Activities extends AppCompatActivity {
             recyclerView.setAdapter(taskAdapterClass);
             //Jos listalla ei ole mitään, annetaan toasti: Aloita lisäämällä uusi tehtävä!
         } else {
-            Toast.makeText(this, "Aloita lisäämällä uusi tehtävä!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Aloita lisäämällä uusi tehtävä yläpalkin plus-merkistä!", Toast.LENGTH_LONG).show();
         }
 
 

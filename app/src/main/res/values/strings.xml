@@ -12,4 +12,5 @@
     <string name="bt_myprofile">myprofile button</string>
     <string name="bt_calendar">go to calendar button</string>
     <string name="bt_newtask">newtask button</string>
+    <string name="tv_infotext">Tämä sovellus on suunnattu lapsille. Sovellus auttaa lasta kehittämään jokapäiväisiä rutiineja. Rutiinien suorittaminen kerryttää tähtipisteitä. Kun tähtipisteitä on kerrytetty tietty vanhempien kanssa sovittu määrä saa lapsi palkinnon.</string>
 </resources>

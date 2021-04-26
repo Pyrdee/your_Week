@@ -52,12 +52,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="36dp"
         android:text="Tehtävä:"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ptTaskName"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskName"
-        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
@@ -65,27 +66,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
         android:text="Ajankohta:"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ptTaskDate"
+        app:layout_constraintBottom_toTopOf="@+id/tvTime"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskDate"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="376dp"
         android:text="Kellonaika:"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ptTaskTime"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskTime"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <EditText
         android:id="@+id/ptTaskTime"
-        android:layout_width="232dp"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -98,9 +101,9 @@
 
     <EditText
         android:id="@+id/ptTaskName"
-        android:layout_width="232dp"
+        android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -109,7 +112,7 @@
 
     <EditText
         android:id="@+id/ptTaskDate"
-        android:layout_width="232dp"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
