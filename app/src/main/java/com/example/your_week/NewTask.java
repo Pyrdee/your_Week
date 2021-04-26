@@ -68,7 +68,11 @@ public class NewTask extends AppCompatActivity {
                 String stringDate = editDate.getText().toString();
                 String stringTime = editTime.getText().toString();
 
+
                 //Varmistetaan että kaikki kentät on täytetty.
+
+                //Varmistetaan että kaikki kentät on täytetty, jos ei ole näytölle tulee Toast
+
                 if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
                     Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -79,7 +83,8 @@ public class NewTask extends AppCompatActivity {
                     Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
 
                     finish();
-                    startActivity(getIntent());
+                    Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
+                    startActivity(intent);
                 }
             }
         });

@@ -6,7 +6,7 @@
     android:background="#F8F7F5"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/tvUserInfo"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="110dp"
         android:gravity="center"
         android:text="TIEDOT:"
         android:textSize="30dp" />
@@ -23,9 +23,9 @@
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvUserInfo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="161dp"
+        android:layout_marginTop="8dp"
         android:text="Nimi:"
         android:textSize="24dp" />
 
@@ -33,9 +33,9 @@
         android:id="@+id/tvUserAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/ptUserName"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="242dp"
+        android:layout_marginTop="8dp"
         android:text="Ikä:"
         android:textSize="24dp" />
 
@@ -43,38 +43,40 @@
         android:id="@+id/tvUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/ptUserAge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="342dp"
+        android:layout_marginTop="8dp"
         android:text="Sähköpostiosoite:"
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/ptUserAge"
-        android:layout_width="74dp"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
+        android:id="@+id/ptUserName"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvUserName"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="274dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textSize="22dp" />
 
     <TextView
-        android:id="@+id/ptUserName"
-        android:layout_width="244dp"
-        android:layout_height="35dp"
+        android:id="@+id/ptUserAge"
+        android:layout_width="74dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvUserAge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="194dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textSize="22dp" />
+
 
     <TextView
         android:id="@+id/ptUserEmail"
-        android:layout_width="258dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvUserEmail"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="387dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textSize="22dp" />
 
