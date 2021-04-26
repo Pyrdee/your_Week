@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textColor="#000"
-        android:textSize="8sp"
+        android:textSize="4sp"
         android:textStyle="bold" />
 
     <EditText
