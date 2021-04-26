@@ -1,20 +1,29 @@
 package com.example.your_week;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class NewTask extends AppCompatActivity {
 
     //Viitteet nappeihin ja muihin toimintoihin layoutissa
     Button btSaveTask;
     EditText editTask, editDate, editTime;
+    DatePickerDialog.OnDateSetListener setListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,30 @@ public class NewTask extends AppCompatActivity {
         editDate = findViewById(R.id.ptTaskDate);
         editTime = findViewById(R.id.ptTaskTime);
 
+        Calendar pickedDate = Calendar.getInstance();
+        final int year = pickedDate.get(Calendar.YEAR);
+        final int month = pickedDate.get(Calendar.MONTH);
+        final int day = pickedDate.get(Calendar.DAY_OF_MONTH);
+
+        editDate.setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(NewTask.this, android.R.style.Theme_Holo_Dialog_MinWidth,
+                        setListener,year,month,day);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
+            }
+    });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month+1;
+                String date = day+"."+month+"."+year;
+                editDate.setText(date);
+            }
+        };
+
         //Tallennusnapin tallennus
         btSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +67,7 @@ public class NewTask extends AppCompatActivity {
                 String stringTask = editTask.getText().toString();
                 String stringDate = editDate.getText().toString();
                 String stringTime = editTime.getText().toString();
+
                 //Varmistetaan että kaikki kentät on täytetty.
                 if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
                     Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();

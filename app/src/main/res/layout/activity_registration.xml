@@ -67,29 +67,32 @@
 
         <EditText
             android:id="@+id/ptName"
-            android:layout_width="wrap_content"
+            android:layout_width="246dp"
             android:layout_height="45dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/pt_nimi"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/ptAge"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/pt_age"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/ptEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/pt_email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textSize="20dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

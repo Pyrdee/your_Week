@@ -1,5 +1,9 @@
 package com.example.your_week;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class TaskModel {
 
     Integer id;
@@ -12,6 +16,7 @@ public class TaskModel {
         this.taskName = taskName;
         this.taskDate = taskDate;
         this.taskTime = taskTime;
+
     }
 
     //rakentaja
@@ -20,6 +25,7 @@ public class TaskModel {
         this.taskName = taskName;
         this.taskDate = taskDate;
         this.taskTime = taskTime;
+
     }
 
 

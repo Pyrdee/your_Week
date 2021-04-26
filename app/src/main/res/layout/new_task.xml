@@ -9,6 +9,7 @@
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
+
     <Button
         android:id="@+id/btSaveNewTask"
         android:layout_width="wrap_content"
@@ -102,6 +103,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
+
     <EditText
         android:id="@+id/ptTaskTime"
         android:layout_width="232dp"
@@ -132,5 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_begin="357dp"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
