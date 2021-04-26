@@ -1,6 +1,7 @@
 package com.example.your_week;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,10 +11,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -24,6 +27,7 @@ public class NewTask extends AppCompatActivity {
     Button btSaveTask;
     EditText editTask, editDate, editTime;
     DatePickerDialog.OnDateSetListener setListener;
+    int t1Hour, t1Minute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +45,29 @@ public class NewTask extends AppCompatActivity {
         final int month = pickedDate.get(Calendar.MONTH);
         final int day = pickedDate.get(Calendar.DAY_OF_MONTH);
 
+        editTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(
+                        NewTask.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        t1Hour = hourOfDay;
+                        t1Minute = minute;
+                    }
+                }, 24, 60, true
+                );
+                timePickerDialog.updateTime(t1Hour, t1Minute);
+                timePickerDialog.show();
+            }
+        });
+
         editDate.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(NewTask.this, android.R.style.Theme_Holo_Dialog_MinWidth,
                         setListener,year,month,day);
+
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();
             }
