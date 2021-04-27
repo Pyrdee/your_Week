@@ -1,5 +1,6 @@
 package com.example.your_week;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -49,11 +50,14 @@ public class NewTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        NewTask.this, new TimePickerDialog.OnTimeSetListener() {
+                        NewTask.this, new TimePickerDialog.OnTimeSetListener()
+                {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         t1Hour = hourOfDay;
                         t1Minute = minute;
+                        editTime.setText(hourOfDay + ":" + minute);
+
                     }
                 }, 24, 60, true
                 );
