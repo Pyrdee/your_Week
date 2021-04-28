@@ -46,6 +46,7 @@ public class NewTask extends AppCompatActivity {
         final int month = pickedDate.get(Calendar.MONTH);
         final int day = pickedDate.get(Calendar.DAY_OF_MONTH);
 
+        // Kellon asetus ja asetukset tehtävän ajankohdan muokkauksessa
         editTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +66,7 @@ public class NewTask extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
-
+        // Päivämäärän asetus erillisellä näkymällä tehtävän päivämäärän valinnassa
         editDate.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View v) {
