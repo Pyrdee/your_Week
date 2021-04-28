@@ -9,12 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
 
     private static final String SHARED_PREF_NAME = "userData";
     private static final String KEY_NAME = "name";
-    private static final String KEY_AGE = "age";
-    private static final String KEY_EMAIL = "email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-    //Siirry eteenpäin rekisteröintisivulle.
-    //Seuraavalla sivulla tarkistetaan onko käyttäjä jo rekisteröitynyt.
-
+        // Tarkistetaan onko sharedprefs lisätty tietoa, sen mukaan tekee päätöksen siitä mille sivulle siirrytään
     public void moveForward(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);

@@ -21,12 +21,12 @@ public class List_Of_Activities extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-
+        // Listan esittely
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-
+        //
         TaskDataHelper taskDataHelper = new TaskDataHelper(this);
         List<TaskModel> taskModels = taskDataHelper.getTaskList();
         //Tarkistetaan onko listalla objekteja, jos on asetetaan ne recycleviewiin.
