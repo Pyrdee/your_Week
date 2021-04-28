@@ -13,7 +13,6 @@ import java.util.List;
 
 public class TaskDataHelper extends SQLiteOpenHelper {
 
-    private List_Of_Activities plusStar = new List_Of_Activities();
 
     //Tietokanta-asiat
     //Tietokannan versio
@@ -96,7 +95,7 @@ public class TaskDataHelper extends SQLiteOpenHelper {
         sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.delete(TABLE_NAME, ID + " = ? ", new String[]
                 {String.valueOf(id)});
-        plusStar.plus();
+
     }
 
 

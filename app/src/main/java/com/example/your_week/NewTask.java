@@ -35,7 +35,7 @@ public class NewTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_task);
 
-
+        //Nimien esittely widgeteille
         btSaveTask = findViewById(R.id.btSaveNewTask);
         editTask = findViewById(R.id.ptTaskName);
         editDate = findViewById(R.id.ptTaskDate);

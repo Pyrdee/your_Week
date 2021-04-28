@@ -20,7 +20,7 @@ public class List_Of_Activities extends AppCompatActivity {
 
     RecyclerView recyclerView;
     private TextView stars;
-    private StarPoints starPoints;
+
 
 
     @Override
@@ -28,16 +28,14 @@ public class List_Of_Activities extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_activities);
 
-        //Esitellään ruutu, johon päivittyvät tiedot tähtien määrästä.
-        stars = findViewById(R.id.tv_StarValue);
-        //Kerrotaan alkuarvot. Alkuarvo = 0 ja uuden tähtipisteen määrä = 1.
-        starPoints = new StarPoints(0, 1);
-        update();
+
+
 
         //Esitellään recycleview widgetti muuttujalle.
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+
 
 
         TaskDataHelper taskDataHelper = new TaskDataHelper(this);
@@ -78,26 +76,6 @@ public class List_Of_Activities extends AppCompatActivity {
         });
     }
 
-    public void reset(View view) {
-        starPoints.reset();
-        update();
-    }
 
-    public void plus() {
-        starPoints.plusStar();
-        Log.d("call", "Hits: ");
-        update();
-    }
-
-    private void update() {
-        stars.setText(Integer.toString(starPoints.getValue()));
-        SharedPreferences pref = getSharedPreferences("SharedPreference",
-                Activity.MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = pref.edit();
-        prefEditor.putInt("starPoints", starPoints.getValue());
-
-
-        prefEditor.commit();
-    }
 
 }
