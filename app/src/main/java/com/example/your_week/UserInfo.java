@@ -69,6 +69,7 @@ public class UserInfo extends AppCompatActivity {
             }
         });
     }
+
     // käyttäjätietojen muutosnappula ja siirtyminen rekisteröinti-sivulle + tietojen päivitys
     public void ChangeInfo(View view) {
         Intent intent = new Intent(UserInfo.this, Registration.class);

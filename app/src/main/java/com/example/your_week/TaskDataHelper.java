@@ -96,7 +96,7 @@ public class TaskDataHelper extends SQLiteOpenHelper {
         sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.delete(TABLE_NAME, ID + " = ? ", new String[]
                 {String.valueOf(id)});
-                plusStar.plus();
+        plusStar.plus();
     }
 
 

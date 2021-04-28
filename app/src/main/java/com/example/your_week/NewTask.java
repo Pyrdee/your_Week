@@ -67,21 +67,21 @@ public class NewTask extends AppCompatActivity {
         });
         // Päivämäärän asetus erillisellä näkymällä tehtävän päivämäärän valinnassa
         editDate.setOnClickListener(new View.OnClickListener() {
-        @Override
+            @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(NewTask.this, android.R.style.Theme_Holo_Dialog_MinWidth,
-                        setListener,year,month,day);
+                        setListener, year, month, day);
 
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();
             }
-    });
+        });
 
         setListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = dayOfMonth+"."+month+"."+year;
+                month = month + 1;
+                String date = dayOfMonth + "." + month + "." + year;
                 editDate.setText(date);
             }
         };
