@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-        // Tarkistetaan onko sharedprefs lisätty tietoa, sen mukaan tekee päätöksen siitä mille sivulle siirrytään
+    // Tarkistetaan onko sharedprefs lisätty tietoa, sen mukaan tekee päätöksen siitä mille sivulle siirrytään
     public void moveForward(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);

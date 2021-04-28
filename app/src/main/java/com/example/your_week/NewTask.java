@@ -51,8 +51,7 @@ public class NewTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        NewTask.this, new TimePickerDialog.OnTimeSetListener()
-                {
+                        NewTask.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         t1Hour = hourOfDay;
@@ -82,41 +81,10 @@ public class NewTask extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month+1;
-                String date = dayOfMonth +"."+month+"."+year;
+                String date = dayOfMonth+"."+month+"."+year;
                 editDate.setText(date);
             }
         };
-
-
-
-        //Tallennusnapin tallennus
-        btSaveTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String stringTask = editTask.getText().toString();
-                String stringDate = editDate.getText().toString();
-                String stringTime = editTime.getText().toString();
-
-
-                //Varmistetaan että kaikki kentät on täytetty.
-
-                //Varmistetaan että kaikki kentät on täytetty, jos ei ole näytölle tulee Toast
-
-                if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
-                    Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
-                } else {
-                    //Siirretään ruutuihin tallennetut tiedot addTask
-                    TaskDataHelper taskDataHelper = new TaskDataHelper(NewTask.this);
-                    TaskModel taskModel = new TaskModel(stringTask, stringDate, stringTime);
-                    taskDataHelper.addTask(taskModel);
-                    Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
-
-                    finish();
-                    Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
-                    startActivity(intent);
-                }
-            }
-        });
 
 
         // upbarissa olevat komponentit
@@ -142,6 +110,29 @@ public class NewTask extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+    }
+//Tallennusnapin tallennus
+
+    public void saveNewTask(View view) {
+        String stringTask = editTask.getText().toString();
+        String stringDate = editDate.getText().toString();
+        String stringTime = editTime.getText().toString();
+
+        //Varmistetaan että kaikki kentät on täytetty, jos ei ole näytölle tulee Toast
+
+        if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
+            Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
+        } else {
+            //Siirretään ruutuihin tallennetut tiedot addTask
+            TaskDataHelper taskDataHelper = new TaskDataHelper(NewTask.this);
+            TaskModel taskModel = new TaskModel(stringTask, stringDate, stringTime);
+            taskDataHelper.addTask(taskModel);
+            Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
+
+            finish();
+            Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
+            startActivity(intent);
+        }
     }
 
 

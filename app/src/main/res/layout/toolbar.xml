@@ -9,12 +9,29 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/imgStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:contentDescription="@string/bt_calendar"
+            android:src="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_StarValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/imgStars"
+            android:text="Stars" />
 
         <ImageView
             android:id="@+id/bt_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/tv_StarValue"
             android:contentDescription="@string/bt_calendar"
             android:src="@drawable/ic_calendar" />
 
@@ -26,15 +43,6 @@
             android:layout_toEndOf="@id/bt_calendar"
             android:contentDescription="@string/bt_newtask"
             android:src="@drawable/ic_newtask" />
-
-        <TextView
-            android:id="@+id/tv_toolbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:layout_toEndOf="@id/bt_newTask"
-            android:text=" " /> //Tähän voisi kirjoittaa jotain.
 
 
         <ImageView

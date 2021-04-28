@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TaskDataHelper extends SQLiteOpenHelper {
 
+    private List_Of_Activities plusStar = new List_Of_Activities();
+
+    //Tietokanta-asiat
     //Tietokannan versio
     private static final int DATABASE_VERSION = 1;
     //Tietokannan nimi
@@ -92,6 +96,7 @@ public class TaskDataHelper extends SQLiteOpenHelper {
         sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.delete(TABLE_NAME, ID + " = ? ", new String[]
                 {String.valueOf(id)});
+                plusStar.plus();
     }
 
 
