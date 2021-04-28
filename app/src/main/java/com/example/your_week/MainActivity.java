@@ -3,12 +3,18 @@ package com.example.your_week;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
 
+    private static final String SHARED_PREF_NAME = "userData";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_AGE = "age";
+    private static final String KEY_EMAIL = "email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +55,16 @@ public class MainActivity extends AppCompatActivity {
     //Seuraavalla sivulla tarkistetaan onko käyttäjä jo rekisteröitynyt.
 
     public void moveForward(View view) {
-        Intent moveToRegistration = new Intent(this, Registration.class);
-        startActivity(moveToRegistration);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+        String name = sharedPreferences.getString(KEY_NAME, null);
+
+
+        if (name != null) {
+            Intent intent = new Intent(MainActivity.this, List_Of_Activities.class);
+            startActivity(intent);
+        } else {
+            Intent moveToRegistration = new Intent(MainActivity.this, Registration.class);
+            startActivity(moveToRegistration);
+        }
     }
 }

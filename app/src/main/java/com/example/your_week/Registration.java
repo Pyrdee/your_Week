@@ -33,10 +33,6 @@ public class Registration extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);
 
-        if (name != null) {
-            Intent intent = new Intent(Registration.this, List_Of_Activities.class);
-            startActivity(intent);
-        }
         // tietojen tallennus nappia painaessa
         btSave.setOnClickListener(new View.OnClickListener() {
                                       @Override

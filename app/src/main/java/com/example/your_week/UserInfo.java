@@ -6,17 +6,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class UserInfo extends AppCompatActivity {
     TextView text_name, text_age, text_email;
     SharedPreferences sharedPreferences;
+    Button btChange;
 
     private static final String SHARED_PREF_NAME = "userData";
     private static final String KEY_NAME = "name";
     private static final String KEY_AGE = "age";
     private static final String KEY_EMAIL = "email";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class UserInfo extends AppCompatActivity {
         text_name = findViewById(R.id.ptUserName);
         text_age = findViewById(R.id.ptUserAge);
         text_email = findViewById(R.id.ptUserEmail);
+
 
         // tietojen haku käyttäen shared prefs
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
@@ -38,6 +42,7 @@ public class UserInfo extends AppCompatActivity {
             text_age.setText("" + age);
             text_email.setText("" + email);
         }
+
 
         // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
@@ -63,6 +68,11 @@ public class UserInfo extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+    }
+
+    public void ChangeInfo(View view) {
+        Intent intent = new Intent(UserInfo.this, Registration.class);
+        startActivity(intent);
     }
 }
 

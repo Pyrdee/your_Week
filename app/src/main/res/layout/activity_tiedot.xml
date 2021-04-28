@@ -80,4 +80,15 @@
         android:textAlignment="center"
         android:textSize="22dp" />
 
+    <Button
+        android:id="@+id/btChange"
+        android:layout_width="217dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp"
+        android:onClick="ChangeInfo"
+        android:text="Muuta käyttäjätietoja"
+        android:textSize="18sp" />
+
 </RelativeLayout>
