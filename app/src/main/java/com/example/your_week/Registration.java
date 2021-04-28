@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
 
@@ -35,22 +37,37 @@ public class Registration extends AppCompatActivity {
 
         // tietojen tallennus nappia painaessa
         btSave.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
 
-                                          SharedPreferences.Editor myEdit = sharedPreferences.edit();
-                                          myEdit.putString(KEY_NAME, ptName.getText().toString());
-                                          myEdit.putString(KEY_AGE, ptAge.getText().toString());
-                                          myEdit.putString(KEY_EMAIL, ptEmail.getText().toString());
-                                          myEdit.apply();
-                                          Intent intent = new Intent(Registration.this, UserInfo.class);
+                SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                myEdit.putString(KEY_NAME, ptName.getText().toString());
+                myEdit.putString(KEY_AGE, ptAge.getText().toString());
+                myEdit.putString(KEY_EMAIL, ptEmail.getText().toString());
+                myEdit.apply();
+                Intent intent = new Intent(Registration.this, UserInfo.class);
+                // Tarkastus siitä onko kaikki pyydetyt kentät täytetty
+                String name = ptName.getText().toString();
+                String age = ptAge.getText().toString();
+                String email = ptEmail.getText().toString();
 
-                                          startActivity(intent);
+                if (TextUtils.isEmpty(name)) {
+                    ptName.setError("Lisää nimi");
+                    Toast.makeText(getApplicationContext(), "Lisää nimi", Toast.LENGTH_SHORT).show();
+                }
+                else if (TextUtils.isEmpty(age)) {
+                    ptAge.setError("Lisää ikä");
+                    Toast.makeText(getApplicationContext(), "Lisää ikä", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(email)) {
+                    ptEmail.setError("Lisää sähköposti");
+                    Toast.makeText(getApplicationContext(), "Lisää sähköposti", Toast.LENGTH_SHORT).show();
+                } else if (ptEmail != null || ptName != null || ptAge != null){
+                    startActivity(intent);
 
-                                      }
+                }
 
-                                  }
-        );
+            }
+        });
     }
 
 }

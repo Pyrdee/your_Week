@@ -111,7 +111,7 @@ public class NewTask extends AppCompatActivity {
             }
         });
     }
-//Tallennusnapin tallennus
+        //Tallennusnapin tallennus
 
     public void saveNewTask(View view) {
         String stringTask = editTask.getText().toString();
