@@ -19,8 +19,6 @@ import java.util.List;
 public class List_Of_Activities extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    private TextView stars;
-
 
 
     @Override
@@ -29,13 +27,10 @@ public class List_Of_Activities extends AppCompatActivity {
         setContentView(R.layout.list_of_activities);
 
 
-
-
         //Esitellään recycleview widgetti muuttujalle.
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-
 
 
         TaskDataHelper taskDataHelper = new TaskDataHelper(this);
@@ -75,7 +70,6 @@ public class List_Of_Activities extends AppCompatActivity {
             }
         });
     }
-
 
 
 }
