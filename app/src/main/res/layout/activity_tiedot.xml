@@ -30,26 +30,6 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/tvUserAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ptUserName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Ikä:"
-        android:textSize="24dp" />
-
-    <TextView
-        android:id="@+id/tvUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ptUserAge"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Sähköpostiosoite:"
-        android:textSize="24dp" />
-
-    <TextView
         android:id="@+id/ptUserName"
         android:layout_width="250dp"
         android:layout_height="30dp"
@@ -58,6 +38,16 @@
         android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/tvUserAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ptUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Ikä:"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/ptUserAge"
@@ -69,6 +59,16 @@
         android:textAlignment="center"
         android:textSize="22dp" />
 
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ptUserAge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:text="Vanhemman sähköpostiosoite:"
+        android:textSize="18dp" />
+
 
     <TextView
         android:id="@+id/ptUserEmail"
@@ -76,14 +76,14 @@
         android:layout_height="30dp"
         android:layout_below="@+id/tvUserEmail"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="18dp"
         android:textAlignment="center"
         android:textSize="22dp" />
 
     <Button
         android:id="@+id/btChange"
         android:layout_width="217dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="139dp"

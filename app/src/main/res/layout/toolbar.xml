@@ -33,6 +33,7 @@
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/tv_StarValue"
             android:contentDescription="@string/bt_calendar"
+            android:onClick="siirry"
             android:src="@drawable/ic_calendar" />
 
         <ImageView

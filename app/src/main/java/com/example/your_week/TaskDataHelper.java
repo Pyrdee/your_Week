@@ -14,14 +14,15 @@ import java.util.List;
 public class TaskDataHelper extends SQLiteOpenHelper {
 
 
-    //Tietokanta-asiat
+    //Tietokanta-asiat: Esitellään kaikki käytettävät nimet valmiiksi.
+    // Jos niitä tarvitsee toistaa, on ne helpompi kirjoittaa.
     //Tietokannan versio
     private static final int DATABASE_VERSION = 1;
     //Tietokannan nimi
     private static final String DATABASE_NAME = "tasks_database";
     //Database Table -nimi
     private static final String TABLE_NAME = "TASKS";
-    //Table kolumnit:
+    //Taulun muodot:
     public static final String ID = "id";
     public static final String TASKNAME = "task";
     public static final String DATE = "date";
@@ -29,7 +30,7 @@ public class TaskDataHelper extends SQLiteOpenHelper {
     private SQLiteDatabase sqLiteDatabase;
 
 
-    //Luodaan table query
+    //Luodaan muuttuja, johon on tallennettu valmiiksi kaikki tiedot taulun luomiseen.
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + ID +
             " INTEGER PRIMARY KEY AUTOINCREMENT," + TASKNAME + " TEXT NOT NULL," + DATE + " TEXT NOT NULL," + TIME + " TEXT NOT NULL);";
 
@@ -39,7 +40,7 @@ public class TaskDataHelper extends SQLiteOpenHelper {
     }
 
 
-    //Luodaan uusi taulu, kun onCreate suoritetaan.
+    //Luodaan uusi taulu, kun onCreate suoritetaan. Jos samanniminen taulu on jo olemassa, mitään ei tehdä.
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
@@ -53,6 +54,10 @@ public class TaskDataHelper extends SQLiteOpenHelper {
     }
 
     //Lisää/tallenna taski
+    /**
+     *
+     * @param taskModel
+     */
     public void addTask(TaskModel taskModel) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(TaskDataHelper.TASKNAME, taskModel.getTaskName());
@@ -63,6 +68,11 @@ public class TaskDataHelper extends SQLiteOpenHelper {
     }
 
     //Hae taulusta tietyt kolumnit.
+    /**
+     * Hae taulusta "TABLE_NAME" tietyltä riviltä muodot indekseistä 0,1,2 ja 3
+     * Tämän jälkeen aseta tiedot näistä merkkijono muuttujiin.
+     * @return
+     */
     public List<TaskModel> getTaskList() {
         String sql = "select * from " + TABLE_NAME;
         sqLiteDatabase = this.getReadableDatabase();
@@ -81,6 +91,10 @@ public class TaskDataHelper extends SQLiteOpenHelper {
         return storeTasks;
     }
 
+    /**
+     * Toiminto, jolla voidaan päivittää/muokata rivin tietoja.
+     * @param taskModel
+     */
     public void updateTask(TaskModel taskModel) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(TaskDataHelper.TASKNAME, taskModel.getTaskName());
@@ -91,6 +105,11 @@ public class TaskDataHelper extends SQLiteOpenHelper {
                 {String.valueOf(taskModel.getId())});
     }
 
+    /**
+     * Tällä voidaan poistaa koko rivi tietokannasta.
+     * Metodille kerrotaan ID ja sitten tämä rivi hävitetään.
+     * @param id
+     */
     public void deleteTask(int id) {
         sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.delete(TABLE_NAME, ID + " = ? ", new String[]

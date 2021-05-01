@@ -22,29 +22,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="63dp"
         android:text="Tehtäväsi:"
-        android:textSize="30sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="273dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="62dp"
         android:text="Lisää tähti" />
 
     <TextView
         android:id="@+id/tvAddStarInfo"
-        android:layout_width="128dp"
-        android:layout_height="51dp"
+        android:layout_width="142dp"
+        android:layout_height="56dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="60dp"
 
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="1dp"
         android:layout_toStartOf="@+id/tvYourTasks"
-        android:text="Kun tehtävä on suoritettu, lisää tähti!" />
+        android:text="@string/tvListInfo" />
 </RelativeLayout>

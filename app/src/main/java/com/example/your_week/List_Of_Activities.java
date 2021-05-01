@@ -49,7 +49,7 @@ public class List_Of_Activities extends AppCompatActivity {
                 int value = prefs.getInt(Stars.COUNT, 0);
 
                 //Incrementing the shared prefs, storing it and updating display.
-                prefs.edit().putInt(Stars.COUNT, (value+1)).apply();
+                prefs.edit().putInt(Stars.COUNT, (value + 1)).apply();
                 int refreshedValue = prefs.getInt(Stars.COUNT, 0);
                 starValue.setText(String.valueOf(refreshedValue));
             }

@@ -20,12 +20,18 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
     Context context;
     TaskDataHelper taskDataHelper;
 
+    /**
+     * Luo TaskAdapterClass instanssimuuttujilla.
+     * @param tasks
+     * @param context
+     */
     public TaskAdapterClass(List<TaskModel> tasks, Context context) {
         this.tasks = tasks;
         this.context = context;
         taskDataHelper = new TaskDataHelper(context);
     }
 
+    //Kutsutaan heti adapteria luodessa.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,6 +41,7 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
         return viewHolder;
     }
 
+    //Tällä data asetetaan viewHolderiin. Kutsutaan jokaisen datarivin kohdalla.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final TaskModel taskModel = tasks.get(position);
@@ -69,6 +76,10 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
     }
 
     //Getterillä saadaan selville kuinka monta taskia taulussa on.
+    /**
+     * Metodilla saadaan selville rivien määrän tasks -listalla.
+     * @return
+     */
     @Override
     public int getItemCount() {
         return tasks.size();

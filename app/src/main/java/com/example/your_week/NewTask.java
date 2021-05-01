@@ -3,7 +3,9 @@ package com.example.your_week;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,13 +25,18 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import static com.example.your_week.Stars.COUNT;
+
 public class NewTask extends AppCompatActivity {
 
     //Viitteet nappeihin ja muihin toimintoihin layoutissa
     Button btSaveTask;
     EditText editTask, editDate, editTime;
     DatePickerDialog.OnDateSetListener setListener;
+    //Luodaan muuttujat kellonajalle, sekä kalenterille.
     int t1Hour, t1Minute;
+
+    TextView starValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +55,7 @@ public class NewTask extends AppCompatActivity {
         final int day = pickedDate.get(Calendar.DAY_OF_MONTH);
 
         // Kellon asetus ja asetukset tehtävän ajankohdan muokkauksessa
+        // Kello avautuu, kun tekstikentästä klikataan.
         editTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,13 +68,14 @@ public class NewTask extends AppCompatActivity {
                         editTime.setText(hourOfDay + ":" + minute);
 
                     }
-                }, 24, 60, true
+                }, 24, 60, true //Kerrotaan minkänäköinen kello halutaan käytöön.
                 );
                 timePickerDialog.updateTime(t1Hour, t1Minute);
                 timePickerDialog.show();
             }
         });
         // Päivämäärän asetus erillisellä näkymällä tehtävän päivämäärän valinnassa
+        // Kalenteri avautuu, kun tekstikentästä klikataan.
         editDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +96,13 @@ public class NewTask extends AppCompatActivity {
             }
         };
 
+        //Tallennetaan textView widgetille oma muuttujanimi.
+        starValue = findViewById(R.id.tv_StarValue);
+        final SharedPreferences prefs = this.getSharedPreferences(Stars.PREFS_KEY, Context.MODE_PRIVATE);
+        //Luodaan uusi tieto nimeltä count, alkuarvoksi asetetaan nolla
+        final int count = prefs.getInt(COUNT, 0);
+        //Asetetaan arvo textviewiin
+        starValue.setText(String.valueOf(count));
 
         // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
@@ -111,7 +128,7 @@ public class NewTask extends AppCompatActivity {
             }
         });
     }
-        //Tallennusnapin tallennus
+    //Tallennusnapin tallennus
 
     public void saveNewTask(View view) {
         String stringTask = editTask.getText().toString();
@@ -123,12 +140,13 @@ public class NewTask extends AppCompatActivity {
         if (stringTask.length() <= 0 || stringDate.length() <= 0 || stringTime.length() <= 0) {
             Toast.makeText(NewTask.this, "Täytä kaikki kentät!", Toast.LENGTH_SHORT).show();
         } else {
-            //Siirretään ruutuihin tallennetut tiedot addTask
+            //Siirretään ruutuihin tallennetut tiedot addTask, kun tämä tehty tulee toast.
+            //Lopuksi vielä siirrytään tehtävälistalle.
             TaskDataHelper taskDataHelper = new TaskDataHelper(NewTask.this);
             TaskModel taskModel = new TaskModel(stringTask, stringDate, stringTime);
             taskDataHelper.addTask(taskModel);
             Toast.makeText(NewTask.this, "Uusi tehtävä lisätty!", Toast.LENGTH_SHORT).show();
-
+            //Kutsutaan onDestroy metodia.
             finish();
             Intent intent = new Intent(NewTask.this, List_Of_Activities.class);
             startActivity(intent);

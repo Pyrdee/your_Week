@@ -4,6 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * Mallintaa tehtävämallin.
+ * Tässä kerrotaan tiedot jotka vaaditaan uuden taskin tallennukseen.
+ */
 public class TaskModel {
 
     Integer id;
@@ -11,6 +15,12 @@ public class TaskModel {
     String taskDate;
     String taskTime;
 
+    /**
+     * Luo tehtävämallin kaikkien paitsi id-muuttujan kanssa.
+     * @param taskName
+     * @param taskDate
+     * @param taskTime
+     */
     //rakentaja ilman id-kenttää
     public TaskModel(String taskName, String taskDate, String taskTime) {
         this.taskName = taskName;
@@ -19,6 +29,13 @@ public class TaskModel {
 
     }
 
+    /**
+     * Luo tehtävämallin kaikkien muuttujien kanssa.
+     * @param id
+     * @param taskName
+     * @param taskDate
+     * @param taskTime
+     */
     //rakentaja
     public TaskModel(int id, String taskName, String taskDate, String taskTime) {
         this.id = id;
@@ -34,10 +51,18 @@ public class TaskModel {
         return id;
     }
 
+    /**
+     * Hankitaan id
+     * @param id
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * Palautetaan taskin/tehtävän nimi.
+     * @return
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -46,6 +71,10 @@ public class TaskModel {
         this.taskName = taskName;
     }
 
+    /**
+     * Kerrotaan tehtävän päivämäärä.
+     * @return
+     */
     public String getTaskDate() {
         return taskDate;
     }
@@ -54,6 +83,10 @@ public class TaskModel {
         this.taskDate = taskDate;
     }
 
+    /**
+     * Kerrotaan tehtävän kellonaika.
+     * @return
+     */
     public String getTaskTime() {
         return taskTime;
     }

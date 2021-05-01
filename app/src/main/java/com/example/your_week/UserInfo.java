@@ -2,6 +2,7 @@ package com.example.your_week;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,16 +11,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.example.your_week.Stars.COUNT;
+
 public class UserInfo extends AppCompatActivity {
     TextView text_name, text_age, text_email;
     SharedPreferences sharedPreferences;
-    Button btChange;
 
     private static final String SHARED_PREF_NAME = "userData";
     private static final String KEY_NAME = "name";
     private static final String KEY_AGE = "age";
     private static final String KEY_EMAIL = "email";
 
+    TextView starValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,14 @@ public class UserInfo extends AppCompatActivity {
             text_email.setText("" + email);
         }
 
+
+        //Tallennetaan textView widgetille oma muuttujanimi.
+        starValue = findViewById(R.id.tv_StarValue);
+        final SharedPreferences prefs = this.getSharedPreferences(Stars.PREFS_KEY, Context.MODE_PRIVATE);
+        //Luodaan uusi tieto nimeltä count, alkuarvoksi asetetaan nolla
+        final int count = prefs.getInt(COUNT, 0);
+        //Asetetaan arvo textviewiin
+        starValue.setText(String.valueOf(count));
 
         // upbarissa olevat komponentit
         ImageView calendar = findViewById(R.id.bt_calendar);
@@ -70,7 +81,7 @@ public class UserInfo extends AppCompatActivity {
         });
     }
 
-    // käyttäjätietojen muutosnappula ja siirtyminen rekisteröinti-sivulle + tietojen päivitys
+    // Käyttäjätietojen muutosnappula. Napilla siirrytään registration -aktivitetille, jossa omia tietoja voidaan muuttaa.
     public void ChangeInfo(View view) {
         Intent intent = new Intent(UserInfo.this, Registration.class);
         startActivity(intent);

@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/include3"
         layout="@layout/toolbar" />
-
 
     <Button
         android:id="@+id/btSaveNewTask"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="234dp"
         android:fontFamily="sans-serif-condensed"
         android:onClick="saveNewTask"
         android:text="@string/tallenna"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTime"
+        app:layout_constraintTop_toBottomOf="@+id/ptTaskTime"
         app:rippleColor="#FF5722" />
 
     <TextView
         android:id="@+id/tvTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="133dp"
-        android:layout_marginEnd="125dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="39dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Luo uusi tehtävä:"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ptTaskName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,97 +44,88 @@
         android:id="@+id/tvTaskName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="47dp"
         android:text="Tehtävä:"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvDate"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskName"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        app:layout_constraintStart_toEndOf="@+id/imgPen"
+        app:layout_constraintTop_toTopOf="@+id/imgPen" />
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="33dp"
         android:text="Ajankohta:"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTime"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskDate"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        app:layout_constraintStart_toEndOf="@+id/imgCalendar"
+        app:layout_constraintTop_toTopOf="@+id/imgCalendar" />
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="376dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
         android:text="Kellonaika:"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imgClock"
         app:layout_constraintEnd_toStartOf="@+id/ptTaskTime"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        app:layout_constraintStart_toEndOf="@+id/imgClock" />
 
     <EditText
         android:id="@+id/ptTaskTime"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="364dp"
+        android:layout_marginBottom="85dp"
         android:ems="10"
         android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btSaveNewTask"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTime"
         app:layout_constraintTop_toBottomOf="@+id/ptTaskDate" />
 
     <EditText
         android:id="@+id/ptTaskName"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="204dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ptTaskDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tvTaskName"
+        app:layout_constraintTop_toBottomOf="@+id/tvTask" />
 
     <EditText
         android:id="@+id/ptTaskDate"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="19dp"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/ptTaskTime"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDate"
         app:layout_constraintTop_toBottomOf="@+id/ptTaskName" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="56dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="395dp" />
 
     <ImageView
         android:id="@+id/imgPen"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="200dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgCalendar"
+        app:layout_constraintEnd_toStartOf="@+id/tvTaskName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pen" />
@@ -147,9 +134,11 @@
         android:id="@+id/imgCalendar"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgClock"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPen"
         app:srcCompat="@drawable/calendar__2_" />
@@ -158,9 +147,11 @@
         android:id="@+id/imgClock"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="368dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgCalendar"
         app:srcCompat="@drawable/clock" />
