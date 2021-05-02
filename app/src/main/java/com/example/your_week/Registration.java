@@ -46,7 +46,7 @@ public class Registration extends AppCompatActivity {
                 //Luodaan intent valmiiksi. Tällä siirrytään tältä aktiviteetilta userinfo-aktiviteettiin.
                 Intent intent = new Intent(Registration.this, UserInfo.class);
 
-                //Haetaan täytetyistä kentistä tiedot ja tallennetaan ne muuttujiin name, age ja email.
+                //Haetaan täytetyistä kentistä tiedot ja tallennetaan ne muuttujiin
                 String name = ptName.getText().toString();
                 String age = ptAge.getText().toString();
                 String email = ptEmail.getText().toString();
