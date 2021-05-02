@@ -46,7 +46,7 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final TaskModel taskModel = tasks.get(position);
 
-        holder.textViewID.setText(Integer.toString(taskModel.getId()));
+        //holder.textViewID.setText(Integer.toString(taskModel.getId()));
         holder.editText_Task.setText(taskModel.getTaskName());
         holder.editText_Date.setText(taskModel.getTaskDate());
         holder.editText_Time.setText(taskModel.getTaskTime());
@@ -86,7 +86,7 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewID;
+        //TextView textViewID;
         EditText editText_Task;
         EditText editText_Date;
         EditText editText_Time;
@@ -96,7 +96,7 @@ public class TaskAdapterClass extends RecyclerView.Adapter<TaskAdapterClass.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewID = itemView.findViewById(R.id.text_id);
+            //textViewID = itemView.findViewById(R.id.text_id);
             editText_Task = itemView.findViewById(R.id.edittext_task);
             editText_Date = itemView.findViewById(R.id.edittext_date);
             editText_Time = itemView.findViewById(R.id.edittext_time);

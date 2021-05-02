@@ -4,14 +4,14 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
+    <!--<TextView
         android:id="@+id/text_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textColor="#000"
         android:textSize="4sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" /> -->
 
     <EditText
         android:id="@+id/edittext_task"
